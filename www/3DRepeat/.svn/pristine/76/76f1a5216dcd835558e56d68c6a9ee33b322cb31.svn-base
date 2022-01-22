@@ -1,0 +1,7 @@
+<?php
+$heading = '3D Repeat - A program for identification and structural alignment of repetitive elements of protein structures.';
+
+$footer = 'Copyright &copy; 2014 CRBM-CNRS Montpellier France.All rights
+reserved.';
+
+?>

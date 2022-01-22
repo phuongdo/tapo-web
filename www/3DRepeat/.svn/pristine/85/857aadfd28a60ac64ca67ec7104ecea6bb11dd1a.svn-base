@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<?php include('includes/headerall.php'); ?>
+<?php include('services/configure.php'); ?>
+<?php
+
+$pdbCode = $_GET ['code'];
+$pdbChain = $_GET ['chain'];
+$pid = $_GET ['pid'];
+?>
+
+<script type="text/javascript">
+
+function bigImg(x){
+	  $('#imgMSA').removeClass('ImageMSA');
+}
+function normalImg(x){
+	  $('#imgMSA').addClass('ImageMSA');
+}
+function jmol(script) {
+	document.jmol.script(script);
+}
+function view_mutilalign_ajax(align){
+	var proCode = '<?php echo $pdbCode ?>';
+	var proChain = '<?php echo $pdbChain?>';
+	getContent('services/multialign.php', proCode,proChain,align);
+} 
+
+function show_more(){
+	var proCode = '<?php echo $pdbCode ?>';
+	var proChain = '<?php echo $pdbChain?>';
+	getShowMoreContent('services/combinedshow.php', proCode,proChain);
+} 
+
+
+function getShowMoreContent(service, proCode,proChain) {
+	//alert(proCode);
+	$.ajax({
+		url : service,
+		type : 'GET',
+		data : {
+			'code' : proCode,
+			'chain' : proChain
+		},
+		dataType : 'html',
+		beforeSend : function() {
+			$('#showMore').html(
+					'<img src="images/loading.gif" />');
+		},
+		success : function(data, textStatus, xhr) {
+			$('#showMore').html(data);
+		},
+		error : function(xhr, textStatus, errorThrown) {
+			
+			$('#showMore').html(textStatus);
+		}
+	});
+}
+
+
+function getContent(service, proCode,proChain,align) {
+	//alert(proCode);
+	$.ajax({
+		url : service,
+		type : 'GET',
+		data : {
+			'code' : proCode,
+			'chain' : proChain,
+			'align':align
+		},
+		dataType : 'html',
+		beforeSend : function() {
+			$('#multialignarea').html(
+					'<img src="images/loading.gif" />');
+		},
+		success : function(data, textStatus, xhr) {
+			$('#multialignarea').html(data);
+		},
+		error : function(xhr, textStatus, errorThrown) {
+			
+			$('#multialignarea').html(textStatus);
+		}
+	});
+}
+	
+</script>
+</head>
+<body>
+
+	<div id="main">
+<?php include('includes/header.php'); ?>
+<?php include('includes/nav.php'); ?>
+
+<div id="page">
+			<div class="applet">
+				<applet name="jmol" code="JmolApplet"
+					archive="applet/JmolAppletSigned.jar" codebase="." width="400"
+					height="400" mayscript="true">
+				<param name="bgcolor" value="black">
+
+
+					<param name="progressbar" value="true">
+
+
+						<param name="script"
+							value="
+						 load <?php echo "http://www.pdb.org/pdb/files/".$pdbCode.".pdb.gz" ?>;
+				 select: <?php echo $pdbChain ?>;
+				 color gray; 
+				 cartoons;
+				 wireframe off;
+				 restrict selected;
+				 color background  [241 241 241]; spacefill off
+				  ">
+				
+				</applet>
+
+			</div>
+			<div id="multialignarea" class="multialignarea"
+				style="border: 1px solid orange; padding: 10px; margin-bottom: 5px;">
+				MSA will appear here.</div>
+			<div id="log">
+				<?php
+				
+				$query = $webservice_url . "/finder/?service=show&code=" . strtolower ( $pdbCode ) . "&chain=" . strtoupper ( $pdbChain ) . "&pid=" . $pid;
+				//$html = file_get_contents ( $webservice_url . "/output/" . strtolower ( $pdbCode ) . $pdbChain . ".out" );
+				$html = file_get_contents($query);
+				echo $html;
+				?>
+				</div>
+
+			<button id="submit" onclick="show_more()" class="content1 btn">Show
+				more...</button>
+
+			<div id="showMore"></div>
+		</div>
+		<!-- end #content -->
+
+<?php include('includes/footer.php'); ?>
+
+</div>
+	<!-- End #wrapper -->
+
+</body>
+
+</html>

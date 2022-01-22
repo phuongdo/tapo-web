@@ -1,0 +1,45 @@
+
+<!-- saved from url=(0035)http://www.acrylicapps.com/company/ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Acrylic - Company</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/company.css" type="text/css">
+</head>
+<body>
+	<div id="main">
+		<div id="nav">
+			<div id="nav-logo">
+				<a href="#" id="nav-logo-link"></a>
+			</div>
+			<div id="nav-items">
+				<span class="nav-item" id="nav-products">Home</span> <a href="">
+					<span class="nav-item">Company</span>
+				</a> <a href="http://www.acrylicapps.com/blog/"><span
+					class="nav-item">Blog</span></a>
+			</div>
+		</div>
+		<div id="page">
+			<div id="page-company-left">
+				<div class="company-header">About</div>
+				<div id="company-photo"></div>
+				<div class="company-desc">Acrylic Software is an independent
+					software design studio located in beautiful Vancouver, Canada. We
+					specialize in creating fun, useful, and beautiful apps for Mac and
+					iOS.</div>
+				<div class="company-header">Contact</div>
+				<div class="contact-header">Business Related</div>
+				<div class="contact-email">company@acrylicapps.com</div>
+				<div class="contact-header">Support</div>
+				<div class="contact-email">pulp@acrylicapps.com</div>
+				<div class="contact-email">wallet@acrylicapps.com</div>
+			</div>
+
+		</div>
+		<div id="copyright">Copyright © 2014 Acrylic Software. All
+			rights reserved.</div>
+	</div>
+
+</body>
+</html>

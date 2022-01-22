@@ -1,0 +1,642 @@
+/**
+* @ phuong: modified
+*/
+
+/**
+ * @ author: BAUDRAND Thierry
+ */
+div.seqData {
+	width: 100%;
+}
+
+div.seqData * {
+	cursor: default;
+	font-size: 12px;
+}
+
+table#tableSeqData {
+	border: none;
+	float: left;
+	width: 100%;
+}
+
+table#tableSeqData tr td.seqDataDetsLab {
+	width: 85px;
+	vertical-align: top;
+}
+
+table#tableSeqData tr td {
+	padding: 3px;
+	border: none;
+}
+
+/**	styles infos sequence */
+div.clear {
+	clear: left;
+}
+
+span.infoLab {
+	color: blue;
+}
+
+span.localCom {
+	float: left;
+}
+
+div.infos {
+	float: left;
+}
+
+div.infos div.infosDet {
+	visibility: hidden;
+	display: none;
+	padding: 5px;
+	position: absolute;
+	background: #F0E68C;
+	border: 1px solid black !important;
+	z-index: 2;
+}
+
+div.infos:hover div.infosDet {
+	visibility: visible;
+	display: block;
+}
+
+/** style zoom */
+div#contZoom {
+	width: 275px;
+	float: left;
+}
+
+div#slider {
+	float: left;
+}
+
+html body div#slider a.ui-slider-handle {
+	position: absolute;
+	height: 23px;
+	width: 12px;
+	top: 0px;
+	left: 0px;
+	/*background:none;
+	border:0;*/
+	background-image: url(../img/slider-handle.gif);
+}
+
+.ui-slider-disabled .ui-slider-handle {
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+
+.ui-slider {
+	width: 200px;
+	height: 23px;
+	position: relative;
+	background-image: url(../img/slider-bg.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+div#contCptZoom {
+	width: 30px;
+	margin-left: 5px;
+	margin-top: 3px;
+	float: left;
+}
+
+span#cptZoom {
+	cursor: default;
+}
+
+div#contImgZoom {
+	float: left;
+	margin-right: 5px;
+}
+/*img#imgZoom {
+	width:26px;
+}*/
+
+/** style legende */
+div#contLegende {
+	float: right;
+	margin-top: 2px;
+}
+
+div#contLegende table#legTab {
+	border: none;
+}
+
+div#contLegende table#legTab tr td {
+	border: none;
+}
+
+div#repeatRegLeg {
+	width: 20px;
+	height: 10px;
+	margin-bottom: 3px;
+	background-color: #999999;
+	border: 1px solid black;
+}
+
+div#repeatRegSelectLeg {
+	width: 20px;
+	height: 10px;
+	background-color: #FFCC66;
+	border: 1px solid black;
+}
+
+div#repeatRegSimilLeg {
+	width: 20px;
+	height: 10px;
+	margin-bottom: 3px;
+	background-color: #FFFF66;
+	border: 1px solid black;
+}
+
+div#repeatRegClickLeg {
+	width: 20px;
+	height: 10px;
+	background-color: #EE6363;
+	border: 1px solid black;
+}
+
+div#domRegLeg {
+	width: 20px;
+	height: 10px;
+	margin-bottom: 3px;
+	background-color: #99CCFF;
+	border: 1px solid black;
+}
+
+div#domRegClickLeg {
+	width: 20px;
+	height: 10px;
+	background-color: #A14EEA;
+	border: 1px solid black;
+}
+
+div.legLab {
+	margin-left: 2px;
+	margin-right: 6px;
+	font-size: 10px;
+}
+
+/** Placement des conteneurs */
+div#seqAdvanceLab {
+	text-align: center;
+}
+
+div#contGlobal {
+	/*border:1px solid blue;*/
+	height: 400px;
+	width: 858px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	cursor: default;
+}
+
+div#contScroll {
+	height: 369px;
+	width: 18px;
+	float: left;
+	margin-top: 16px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	cursor: default;
+}
+
+div#contIds {
+	height: 185px;
+	width: 200px;
+	float: left;
+	cursor: default;
+}
+
+div#idSeq {
+	height: 16px;
+	width: 100%;
+	font-size: 11px;
+	float: left;
+}
+
+div#idSeq a#idSeqLink {
+	text-decoration: none;
+}
+
+div#idSeq span {
+	float: right;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+div#idsDom {
+	border-top: 1px solid grey;
+	height: 369px;
+	width: 100%;
+	clear: left;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+div.idDom {
+	height: 25px;
+	margin-right: 2px;
+	font-size: 11px;
+}
+
+div#idsDom a:hover {
+	text-decoration: none;
+}
+
+div#contSeqDomGlobal {
+	/*height: 400px;*/
+	/*width: 740px;*/
+	float: left;
+	/*overflow-x: scroll;*/
+	overflow-y: hidden;
+}
+
+div#contSeqGlobal {
+	height: 16px;
+	width: 740px;
+	float: left;
+}
+
+div#contDomGlobal {
+	border-top: 1px solid grey;
+	height: 369px;
+	width: 740px;
+	clear: left;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+div#contLg {
+	border-bottom: 1px solid grey;
+	width: 30px;
+	height: 16px;
+	font-size: 11px;
+	float: left;
+}
+
+div.contDom {
+	height: 25px;
+	width: 100%;
+	cursor: default;
+}
+
+div.highSpacer {
+	clear: left;
+	height: 5px;
+}
+
+div.spacer {
+	clear: left;
+	height: 5px;
+}
+
+div.contDomClear {
+	clear: left;
+}
+
+/** styles regions repetees */
+div.lien {
+	float: right;
+	cursor: pointer;
+}
+
+div.lien div.infosId div.clanComments {
+	padding-left: 20px;
+}
+
+div.lien div.infosId {
+	visibility: hidden;
+	display: none;
+	padding: 5px;
+	position: absolute;
+	background: #F0E68C;
+	border: 1px solid black !important;
+	font-family: courier new;
+	z-index: 2;
+}
+
+span.spDomClick {
+	color: #A14EEA;
+}
+/* gere cote javascript (function hideTitle) */
+/*div.lien:hover div.infosId {
+	visibility:visible;
+	display:block;
+}*/
+div.title {
+	font-weight: bold;
+	text-align: center;
+}
+
+span.bold {
+	font-weight: bold;
+}
+
+div.align {
+	text-align: center;
+}
+
+div.regSeq {
+	height: 10px;
+	font-size: 10px;
+	float: left;
+	background-color: #999999;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+div.regSeqSel {
+	height: 10px;
+	font-size: 10px;
+	float: left;
+	background-color: #FFCC66;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+div.regSeqSim {
+	height: 10px;
+	font-size: 10px;
+	float: left;
+	background-color: #FFFF66;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+div.regSeqClick {
+	height: 10px;
+	font-size: 10px;
+	float: left;
+	background-color: #EE6363;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+div.basicSeq {
+	height: 10px;
+	font-size: 10px;
+	float: left;
+	margin-top: 3px;
+	background-color: #CCCCCC;
+}
+
+div.infosReg {
+	height: 10px;
+}
+
+div.infosReg div.infosRegDet {
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	padding: 5px;
+	background: #F0E68C;
+	border: 1px solid black !important;
+	font-family: courier new;
+	font-size: 11px;
+}
+
+/* gere cote javascript (function hideTitle) */
+/*div.infosReg:hover div.infosRegDet { 
+	visibility:visible;
+	display:block;
+}*/
+
+/** style domaines */
+div.basicSeqDom {
+	height: 2px;
+	font-size: 2px;
+	margin-top: 7px;
+	background-color: #4F4D4D;
+	float: left;
+}
+
+div.seqDom {
+	height: 10px;
+	font-size: 10px;
+	margin-top: 3px;
+	background-color: #3C99F5;
+	float: left;
+	cursor: pointer;
+}
+
+div.seqDomRef {
+	height: 10px;
+	font-size: 10px;
+	margin-top: 3px;
+	background-color: #EA4141;
+	float: left;
+	cursor: pointer;
+}
+
+div.seqDomA {
+	border-bottom: 1px dashed #AAA;
+}
+
+div.seqDomClick {
+	height: 10px;
+	font-size: 10px;
+	margin-top: 3px;
+	background-color: #A14EEA;
+	float: left;
+	cursor: pointer;
+}
+
+/** styles Profile et Dom */
+div.noResult {
+	color: red;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px;
+	margin: auto;
+}
+
+div.contSeqAdvanceShow {
+	width: 858px;
+	height: 380px;
+	min-height: 380px;
+	/*border:1px solid blue;*/
+}
+
+div.seqAdvanceLoad {
+	width: 508px;
+	height: 380px;
+	min-height: 380px;
+	margin: auto;
+	background-image: url('../img/loading.gif');
+	background-repeat: no-repeat;
+}
+
+div#contGlobalA {
+	width: 858px;
+	height: 380px;
+	outline: none;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+div#contIdsA {
+	height: 185px;
+	width: 70px;
+	float: left;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	cursor: default;
+}
+
+div#contIdsA a#idSeqALink {
+	text-decoration: none;
+}
+
+div.idSeqA {
+	height: 16px;
+	width: 69px;
+	font-size: 11px;
+	clear: left;
+	border-right: 1px dashed #AAA;
+}
+
+div.idSeqBorderA {
+	border-bottom: 1px dashed #AAA;
+	border-right: 1px dashed #AAA;
+	height: 16px;
+	width: 69px;
+	font-size: 11px;
+	clear: left;
+}
+
+div.scrollSeqA {
+	height: 17px;
+	font-size: 11px;
+	clear: left;
+}
+
+div.idSeqA span {
+	float: right;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+div#contSeqAGlobal {
+	height: 380px;
+	width: 770px;
+	float: left;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	cursor: default;
+}
+
+div#contSeqA {
+	height: 365px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+div.seqA {
+	height: 16px;
+}
+
+div.lgA {
+	width: 30px;
+	font-size: 11px;
+	margin-left: 2px;
+	float: left;
+}
+
+div.clearSeqA {
+	clear: left;
+}
+
+div#contScrollA {
+	height: 365px;
+	width: 18px;
+	float: left;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	cursor: default;
+}
+
+/** styles config */
+div#contConfigImg {
+	float: left;
+	margin-top: 4px;
+	cursor: pointer;
+}
+/*img#imgConfig {
+	width:26px;
+}*/
+div#config {
+	clear: left;
+}
+
+div.configHidden {
+	display: none;
+	visibility: hidden;
+}
+
+div.configShow {
+	width: 500px;
+	display: block;
+	visibility: visible;
+	/*border:1px solid blue;*/
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+div.contConfProf {
+	width: 60%;
+	padding: 5px;
+	float: left;
+}
+
+div.contConfDom {
+	width: 35%;
+	padding: 5px;
+	float: left;
+}
+
+table#confProfTab {
+	border: none;
+}
+
+table#confProfTab tr td {
+	padding: 2px;
+	border: none;
+}
+
+table#confProfTab tr td.confTdRight {
+	padding-left: 10px;
+}
+
+table#confProfTab tr td.confTdLeft {
+	/*padding-top:2px;*/
+	
+}
+
+table#confDomTab {
+	border: none;
+}
+
+table#confDomTab tr td {
+	padding: 2px;
+	border: none;
+}
+
+td.labProf {
+	text-align: center;
+}
+
+div.contRefreshConf {
+	text-align: right;
+}
+
+input.inpConf {
+	width: 27px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<SCRIPT SRC="./Jmol.js"></SCRIPT>
+
+<SCRIPT>
+
+</SCRIPT>
+
+
+
+<script  type="text/javascript"> 
+	  jmolInitialize(".")
+</script>
+<script type="text/javascript">
+	
+	
+function change() {
+	alert("a");
+	//jmolScript("select:a; color red","1"); 
+	 jmolScript("select:a;color red;"); 
+	
+
+} 
+
+</script>
+</head>
+<body>
+	Sugar is sweet,
+	<P>But Nutrasweet is sweeter.
+	<P> 
+	<div  id="jmol_right">
+
+		<applet name="jmol" code="JmolApplet"
+			archive="applet/JmolAppletSigned.jar" codebase="." width="400"
+			height="400" align="left" mayscript="true">
+			<param name="bgcolor" value="black">
+			<param name="progressbar" value="true">
+			<param name="script"
+				value="
+  load http://www.pdb.org/pdb/files/4irt.pdb.gz;
+  set perspectiveModel 10;
+  set zoomLarge off;
+  select all; cpk off; wireframe 10; color yellow;
+
+  ">
+
+
+		</applet>
+		<a href="javascript:document.jmol.script('color background black')">
+			black background</a> <a
+			href="javascript:document.jmol.script('color background grey')">
+			grey background</a>
+	</div>
+	<SCRIPT>
+	    	
+		//	jmolApplet(
+			//		400,
+				//	"load 1BPO.pdb;select:a;color gray; cartoons;wireframe off; restrict selected;spacefill off","1")
+		</SCRIPT>
+
+	<button onclick="change()">click here</button>
+</body>
+</html>

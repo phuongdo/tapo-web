@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<?php include('includes/headerall.php'); ?>
+<meta http-equiv="refresh" content="10">
+
+</head>
+<?php include('services/configure.php'); ?>
+<?php
+
+// query
+$pdbCode = $_GET ['code'];
+$pdbChain = $_GET ['chain'];
+$pid = $_GET ['pid'];
+
+try {
+	
+	$query = $webservice_url . "/finder/?service=read&code=" . strtolower ( $pdbCode ) . "&chain=" . strtoupper ( $pdbChain ) . "&pid=" . $pid;
+	$rep = intval ( file_get_contents ( $query ) );
+
+	if ($rep == 1) {
+		$urlWork = "result.php?code=" . strtolower ( $pdbCode ) . "&chain=" . strtoupper ( $pdbChain ) . "&pid=" . $pid;
+		echo $urlWork;
+		redirect ( $urlWork );
+	} else {
+	}
+} catch ( ErrorException $e ) {
+	echo "mutiple alignment error!!!! ";
+}
+
+/* redicrect url */
+function redirect($url) {
+	header ( 'Location: ' . $url );
+	die ();
+}
+?>
+
+
+<body>
+
+	<div id="main">
+
+<?php include('includes/header.php'); ?>
+
+<?php include('includes/nav.php'); ?>
+
+<div id="page">
+
+
+
+			<h4>Title</h4>
+			<p>request  : <?php echo $pdbCode.$pdbChain; ?> <br /> pid: <?php echo $pid ?></p>
+
+			<h4>
+				Status<font style="color: red; ">: <b>RUNNING...</b></font>
+			</h4>
+
+
+			<p>The process is still running. This may take some time. The final
+				output will appear on this page, which will be automatically
+				refreshed in 10 seconds. Please do not close this window unless
+				bookmarked</p>
+			<?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+				
+				<p>
+				Bookmark page : <a href="<?php echo $actual_link; ?>"><?php echo $actual_link; ?></a>
+
+
+			</p>
+
+		</div>
+		<!-- end #content -->
+
+
+
+<?php include('includes/footer.php'); ?>
+
+		</div>
+	<!-- End #wrapper -->
+
+</body>
+
+</html>

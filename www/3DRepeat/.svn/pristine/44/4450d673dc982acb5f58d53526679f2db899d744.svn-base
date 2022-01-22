@@ -1,0 +1,263 @@
+body {
+	background-color: #F9F9F9;
+	background-image: url(../images/bg3.gif);
+	background-position: center top;
+	background-repeat: repeat;
+	text-shadow: #FFFFFF 0px 1px 0px;
+	font-family: "Georgia", "Times", serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+}
+
+#main {
+	margin: 50px auto 50px auto;
+	width: 1000px;
+	min-height: 500px;
+	padding: 0px 20px 0px 20px;
+}
+
+#page {
+	background: rgba(0, 0, 0, 0.03);
+	border: 1px solid #DDDDDD;
+	min-height: 500px;
+	text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.75) 0px 1px 0px, inset 0px 1px
+		0px rgba(0, 0, 0, 0.02);
+	-moz-border-radius: 5px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.75) 0px 1px 0px, inset 0px 1px
+		0px rgba(0, 0, 0, 0.02);
+}
+
+#nav {
+	width: 1000px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+#nav-logo {
+	width: 1000px;
+	height: 50px;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(#db7148 0%, #c93e2c 100%);
+	background: -moz-linear-gradient(#db7148 0%, #c93e2c 100%);
+}
+
+#nav-logo-link {
+	width: 998px;
+	height: 48px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	background: url(../images/logo.png) 14px 5px no-repeat;
+	background-size: 35px 35px;
+	display: block;
+}
+
+#nav-items {
+	width: 500px;
+	margin-left: 450px;
+	margin-top: -50px;
+	position: absolute;
+	text-align: right;
+	padding-top: 15px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.nav-item {
+	color: #ffffff;
+	font: 15px "Helvetica", "Arial", sans-serif;
+	padding-left: 15px;
+	text-transform: uppercase;
+	-webkit-transition: color 0.25s linear;
+	-moz-transition: color 0.25s linear;
+}
+
+.nav-item:hover {
+	color: #ae422f;
+	cursor: pointer;
+}
+
+#nav-products {
+	padding-right: 16px;
+	background: url(images/dropdown.png) right center no-repeat;
+}
+
+/* Popup */
+#copyright {
+	margin-top: 20px;
+	font: 12px "Helvetica", "Arial", sans-serif;
+	color: #999;
+}
+
+/* main */
+#main-banner-top {
+	border-bottom: 1px solid #DDDDDD;
+	font: 22px "Georgia", "Times", serif;
+	color: #999999;
+	text-align: center;
+	padding: 35px;
+}
+
+#main-products {
+	
+}
+
+#main-product-l {
+	width: 450px;
+	padding: 40px;
+	display: table-cell;
+	border-right: 1px solid #DDDDDD;
+}
+
+#main-product-r {
+	width: 450px;
+	padding: 40px;
+	display: table-cell;
+}
+
+#main-banner-bottom {
+	border-top: 1px solid #DDDDDD;
+	color: #AAAAAA;
+	padding: 35px;
+	min-height: 100px;
+}
+
+.main-product-title {
+	font: bold 20px "Helvetica", "Arial", sans-serif;
+}
+
+.main-product-subtitle {
+	color: #999999;
+	font: 16px "Helvetica", "Arial", sans-serif;
+	padding-left: 0.2em;
+}
+
+.main-product-image {
+	min-height: 325px;
+	background: url(images/product_bg.png) center 140px no-repeat;
+}
+
+.main-product-footer {
+	color: #999999;
+	font: 16px "Helvetica", "Arial", sans-serif;
+}
+
+#times-image-1 {
+	background: url(images/times_icon.png) top left no-repeat;
+}
+
+#pulp-image-1 {
+	background: url(images/pulp_icon_2x.png) 80px 30px no-repeat;
+	background-size: 256px 256px;
+}
+
+#wallet-image-1 {
+	background: url(images/wallet_icon_2x.png) 80px 30px no-repeat;
+	background-size: 256px 256px;
+}
+
+#wallet-image-2 {
+	background: url(images/wallet_screen.png) top left no-repeat;
+}
+
+.product-image {
+	display: block;
+	width: 420px;
+	height: 325px;
+}
+
+#product-nav {
+	padding: 30px;
+	padding-left: 40px;
+}
+
+#product-nav-title {
+	font: bold 20px "Helvetica", "Arial", sans-serif;
+}
+
+.product-nav-platform {
+	font: 16px "Helvetica", "Arial", sans-serif;
+	padding-left: 0.5em;
+	color: #666;
+}
+
+.product-nav-platform-selected {
+	color: #000;
+}
+
+/* PHuong added */
+a.infobulle {
+	background: url('../images/info.gif') no-repeat 0 0px;
+	height: 17px;
+	width: 17px;
+	display: inline-block;
+	font-size: 12px;
+}
+
+a.infobulle span {
+	font-family: arial;
+	font-size: 12px;
+	line-height: 15px;
+	position: absolute;
+	margin-top: -1em;
+	margin-left: 2em;
+	background-color: #eef;
+	text-decoration: none;
+	width: 150px;
+	padding: 3px;
+	border: 1px outset gray;
+	z-index: 5;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/* Pour arrondir les coins. */
+	display: none;
+}
+
+a.infobulle:hover span {
+	display: block;
+}
+
+div#log {
+	clear: both;
+	margin: 3px;
+	height: 300px;
+	overflow: auto;
+	border: 1px solid black;
+	background: #EFEFFD;
+	color: #1F1F2F;
+	font-size: 12px;
+	font-family: "Courier New";
+}
+
+div.applet {
+	width: 400px;
+	float: left;
+	padding: 10px;
+}
+
+div.multialignarea {
+	width: 450px;
+	text-align: center;
+	float: right;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding: 10px;
+	margin-bottom: 25px;
+	overflow: auto;
+}
+
+.ImageMSA {
+	max-width: 450px;
+}
+
+.viewIcon {
+	background: url('../images/viewIcon.png') no-repeat 0 0px;
+	height: 20px;
+	width: 25px;
+	display: inline-block;
+}

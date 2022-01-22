@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<?php include('includes/headerall.php'); ?>
+</head>
+
+<body>
+
+	<div id="main">
+
+<?php include('includes/header.php'); ?>
+
+<?php include('includes/nav.php'); ?>
+
+<div id="page">
+
+			<h3>Quick Help and References</h3>
+
+			<h4>Description</h4>
+			<p>The protein tandem repeats are frequently not perfect, containing
+				a number of mutations (substitutions, indels) accumulated during
+				evolution, and some of them cannot be easily identified. To solve
+				this problem, over the last few years, several algorithms and
+				software have been developed (see for review, Kajava, 2011).
+				Depending on the size and character of the repeats some of them are
+				performing better than others, but no best approach exists to cover
+				the whole range of repeats. Our plan is to select the most accurate
+				and rapid among them that will be able to cover the complete
+				spectrum of tandem repeats</p>
+			<h4>Structure</h4>
+			<p>
+				This is where you must provide information about your structure.
+				There are 2 possibilities for providing the structure: Entering the
+				4 letter PDB ID. For example, entering simply 1BPO will execute
+				program on chains A,B C for this PDB file. Protein with multiple
+				chains (e.g. 9ANT), our program will choose the unique chain to find
+				repeats by using CD-HIT integrated (<a
+					href="http://weizhong-lab.ucsd.edu/cd-hit/">http://weizhong-lab.ucsd.edu/cd-hit/</a>)
+				.
+			</p>
+			Upload a file in PDB format. The file must conform to the PDB
+			specification.( COMMING SOON)
+
+			<h4>Output</h4>
+			<p>The output of the server can be divided in 5 columns:</p>
+			<img alt="ouput" width="800" height="200" src="images/f2_output.jpg">
+
+				<h5>1. T-REKS 3D</h5>
+				<p>
+					T-REKS is an algorithm for de novo detection and alignment of
+					repeats in sequences based on K-means algorithm (<a
+						href="http://bioinfo.montp.cnrs.fr/?r=t-reks/">http://bioinfo.montp.cnrs.fr/?r=t-reks/</a>)
+					. In this novo methods, T-REKS was used in conformation alphatbets
+					generated from protein 3D structure.
+				</p>
+				<h5>2. TRUST 3D</h5>
+				<p>Both of T_REKS 3D and TRUST 3D are based on original TRUST and
+					T-REKS alternatively. However, we customized these program by using
+					novel substitution matrix and our own structure alphabets.</p>
+
+				<h5>3. VECTORS</h5>
+
+				<p>Our technique represents a-helices and b-strands, and loops as
+					vectors and uses RMSD of these vectors compare pairs of vectors
+					from different proteins There are 4 type of vectors: B (for
+					b-strand), H ( for a-helices), N-M-L for loops.</p>
+
+				<h5>4. VECTORS-TREKS</h5>
+				<p>T-REKS was used to detect short patterns of vectors. These motif
+					of vectors, and then, were superimposed together to find the
+					repeats.</p>
+
+				<h5>5. CONTACT MAP</h5>
+				<p>A protein contact map represents the distance between all
+					possible amino acid residue pairs of a three-dimensional protein
+					structure using a binary two-dimensional matrix. We are interested
+					in contact map overlap to find the repetitive because it tell us
+					how the pattern of one protein is folding</p>
+				<p>After obtaining the signals from contact map of one protein, we
+					will try to use Fourier analysis to identify this protein repeats.</p>
+
+				<h5>6. RAPHEAL</h5>
+				<p>
+					Based on RAPHEAL server, we constructed x,y,z coordinate profiles
+					like Repheal method (<a href="http://protein.bio.unipd.it/raphael/">http://protein.bio.unipd.it/raphael/</a>).
+					Then, these profiles were used to find repeats.
+				</p>
+		
+		</div>
+		<!-- end #content -->
+
+
+
+<?php include('includes/footer.php'); ?>
+
+		</div>
+	<!-- End #wrapper -->
+
+</body>
+
+</html>

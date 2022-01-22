@@ -1,0 +1,31 @@
+<?php include('configure.php'); ?>
+<?php
+
+set_time_limit ( 500 );
+$pdbCode = $_GET ['code'];
+// $pdbChain = $_GET ['chain'];
+try {
+	
+	$query =  $webservice_url . "/finder/?service=analyse&code=" . strtolower ( $pdbCode );
+	//$html = file_get_contents ( $query);
+	$html = get_data($query);
+	echo $html;
+} catch ( ErrorException $e ) {
+	echo "analysis  error!!!! ";
+}
+
+
+
+
+/* gets the data from a URL */
+function get_data($url) {
+	$ch = curl_init();
+	$timeout = 500;
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+	$data = curl_exec($ch);
+	curl_close($ch);
+	return $data;
+}
+?>

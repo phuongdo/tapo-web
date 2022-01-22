@@ -1,0 +1,107 @@
+#page {
+	padding: 40px;
+}
+
+#page-company-left {
+	display: table-cell;
+	width: 900px;
+}
+
+#page-company-right {
+	display: table-cell;
+	padding-left: 40px;
+	width: 550px;
+}
+
+#company-photo {
+	width: 352px;
+	height: 225px;
+	background: url(images/company-photo.png) top left no-repeat;
+	margin-left: -3px;
+	margin-bottom: 0.75em;
+}
+
+.company-header {
+	font: bold 22px "Helvetica", "Arial", sans-serif;
+	margin-bottom: 0.5em;
+}
+
+.company-desc {
+	font-size: 16px;
+	color: #666666;
+	line-height: 1.5em;
+	margin-bottom: 2em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.company-desc a {
+	font-weight: bold;
+	color: #222222;
+}
+
+.contact-header {
+	font: bold 14px "Helvetica", "Arial", sans-serif;
+	margin-bottom: 0.5em;
+	margin-top: 1em;
+}
+
+.contact-email {
+	font: 14px "Helvetica", "Arial", sans-serif;
+	color: #666666;
+}
+
+.company-person {
+	margin-bottom: 2em;
+	clear: both;
+}
+
+.company-person-photo {
+	width: 142px;
+	height: 127px;
+	margin-left: -4px;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.company-person-name {
+	font: bold 16px "Helvetica", "Arial", sans-serif;
+	padding-top: 0.25em;
+}
+
+.company-person-title {
+	font: 16px "Helvetica", "Arial", sans-serif;
+	color: #666666;
+	margin-bottom: 0.5em;
+	padding-top: 0.25em;
+}
+
+.company-person-bio {
+	font-size: 16px;
+	color: #666666;
+	line-height: 1.5em;
+	margin-bottom: 1em;
+}
+
+.company-person-links {
+	font: bold 12px "Helvetica", "Arial", sans-serif;
+}
+
+.company-person-links a {
+	color: #222222;
+}
+
+.link-email {
+	padding-left: 23px;
+	background: url(images/profile-email.png) 0px 0px no-repeat;
+	padding-right: 10px;
+}
+
+.link-twitter {
+	padding-left: 23px;
+	background: url(images/profile-twitter.png) 0px 0px no-repeat;
+}
+
+.link-ping {
+	padding-left: 32px;
+	background: url(images/profile-ping.png) 10px center no-repeat;
+}

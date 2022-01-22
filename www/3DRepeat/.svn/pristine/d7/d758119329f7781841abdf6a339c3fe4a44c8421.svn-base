@@ -1,0 +1,43 @@
+<?php include('configure.php'); ?>
+<?php
+
+// set_time_limit ( 500 );
+$pdbCode = $_POST ['code'];
+$pdbChain = $_POST ['chain'];
+try {
+	
+	$pid = uniqid ();
+	
+	$query = $webservice_url . "/finder/?service=analyse&code=" . strtolower ( $pdbCode ) . "&chain=" . strtoupper ( $pdbChain ) . "&pid=" . $pid;
+	
+	$html = file_get_contents ( $query );
+	$rep = intval ( get_data ( $query ) );
+	if ($rep == 1) {
+		
+		$urlWork = "../work.php?code=" . strtolower ( $pdbCode ) . "&chain=" . strtoupper ( $pdbChain ) . "&pid=" . $pid;
+		redirect ( $urlWork );
+	} else {
+		echo "Service is unavailable!!!!";
+	}
+} catch ( ErrorException $e ) {
+	echo "analysis  error!!!! ";
+}
+
+/* redicrect url */
+function redirect($url) {
+	header ( 'Location: ' . $url );
+	die ();
+}
+
+/* gets the data from a URL */
+function get_data($url) {
+	$ch = curl_init ();
+	$timeout = 500;
+	curl_setopt ( $ch, CURLOPT_URL, $url );
+	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+	curl_setopt ( $ch, CURLOPT_CONNECTTIMEOUT, $timeout );
+	$data = curl_exec ( $ch );
+	curl_close ( $ch );
+	return $data;
+}
+?>
